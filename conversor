@@ -1,0 +1,86 @@
+from colorama import init, Fore
+init(autoreset=True)
+
+while True:
+    print(Fore.BLUE  + "===== MENU DE CONVERSÕES =====")
+    print(Fore.GREEN + "------- Comprimento -------")
+    print(Fore.YELLOW + "[01]" + Fore.WHITE + " Centímetros → Metros")
+    print(Fore.YELLOW + "[02]" + Fore.WHITE + " Metros → Centímetros")
+    print(Fore.YELLOW + "[03]" + Fore.WHITE + " Metros → Quilômetros")
+    print(Fore.YELLOW + "[04]" + Fore.WHITE + " Quilômetros → Metros")
+    print(Fore.YELLOW + "[05]" + Fore.WHITE + " Centímetros → Quilômetros")
+    print(Fore.YELLOW + "[06]" + Fore.WHITE + " Quilômetros → Centímetros")
+    
+    print(Fore.GREEN +"------- Massa -------")
+    print(Fore.YELLOW + "[07]"  + Fore.WHITE +  " Gramas → Quilogramas")
+    print(Fore.YELLOW + "[08]"  + Fore.WHITE + " Quilogramas → Gramas")
+    print(Fore.YELLOW + "[09]"  + Fore.WHITE + " Quilogramas → Toneladas")
+    print(Fore.YELLOW + "[10]" + Fore.WHITE +  " Toneladas → Quilogramas")
+    
+    print(Fore.GREEN +"------- Tempo -------")
+    print(Fore.YELLOW + "[11]" + Fore.WHITE + " Minutos → Segundos")
+    print(Fore.YELLOW + "[12]" + Fore.WHITE + " Horas → Minutos")
+    print(Fore.YELLOW + "[13]" + Fore.WHITE + " Dias → Horas")
+    print(Fore.YELLOW + "[14]" + Fore.WHITE + " Horas → Dias")
+    
+    print(Fore.YELLOW +"[0] "  + Fore.RED +  " Sair")
+    print("==============================")
+    
+    # Remove zeros à esquerda da escolha, para aceitar "01" e "1"
+    usuario = input("Escolha a opção: ").lstrip("0") or "0"
+    
+    match usuario:
+        # --- Comprimento ---
+        case "1":
+            valor = float(input("Digite o valor em cm: "))
+            print(f"{valor} cm = {valor/100:.2f} m")
+        case "2":
+            valor = float(input("Digite o valor em m: "))
+            print(f"{valor} m = {valor*100:.2f} cm")
+        case "3":
+            valor = float(input("Digite o valor em m: "))
+            print(f"{valor} m = {valor/1000:.2f} km")
+        case "4":
+            valor = float(input("Digite o valor em km: "))
+            print(f"{valor} km = {valor*1000:.2f} m")
+        case "5":
+            valor = float(input("Digite o valor em cm: "))
+            print(f"{valor} cm = {valor/100000:.5f} km")
+        case "6":
+            valor = float(input("Digite o valor em km: "))
+            print(f"{valor} km = {valor*100000:.2f} cm")
+        
+        # --- Massa ---
+        case "7":
+            valor = float(input("Digite o valor em g: "))
+            print(f"{valor} g = {valor/1000:.2f} kg")
+        case "8":
+            valor = float(input("Digite o valor em kg: "))
+            print(f"{valor} kg = {valor*1000:.2f} g")
+        case "9":
+            valor = float(input("Digite o valor em kg: "))
+            print(f"{valor} kg = {valor/1000:.2f} t")
+        case "10":
+            valor = float(input("Digite o valor em t: "))
+            print(f"{valor} t = {valor*1000:.2f} kg")
+        
+        # --- Tempo ---
+        case "11":
+            valor = float(input("Digite o valor em minutos: "))
+            print(f"{valor} min = {valor*60:.2f} s")
+        case "12":
+            valor = float(input("Digite o valor em horas: "))
+            print(f"{valor} h = {valor*60:.2f} min")
+        case "13":
+            valor = float(input("Digite o valor em dias: "))
+            print(f"{valor} dias = {valor*24:.2f} h")
+        case "14":
+            valor = float(input("Digite o valor em horas: "))
+            print(f"{valor} h = {valor/24:.2f} dias")
+        
+        # --- Sair ---
+        case "0":
+            print("Saindo... Até mais!")
+            break
+        case _:
+            print("Opção inválida! Digite um número entre 0 e 14.")
