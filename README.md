@@ -2,7 +2,7 @@
 
 ## 📌 Informações do Projeto  
 - **Aluno:** [Kauan Silva Soares]
-- **Turma:** [2°DS]  
+- **Turma:** [3°DS]  
 - **Matéria:** Lógica de Programação  
 - **Tema do Projeto:** [Convertor de Unidades]  
 
